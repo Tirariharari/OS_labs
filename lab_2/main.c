@@ -39,7 +39,7 @@ int main(void)
 		localtime_r(&t, &lt);
 		strftime(mtime, sizeof mtime, "%d %b %Y %T", &lt);
 		printf ("\t%s", mtime);
-		printf ("\t%5ld\t %s\n", buff->st_size, dir->d_name);
+		printf ("\t%5lld\t %s\n", buff->st_size, dir->d_name);
 		free (namelist[n]);
 		i++;
 	}
