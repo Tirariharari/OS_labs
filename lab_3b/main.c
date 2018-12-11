@@ -5,7 +5,7 @@
 #include <time.h>
 #include <sys/wait.h>
 
-int main (int argc, char* argv){
+int main (){
 	//  Creating pipe
 	int pipes[2];
 	if (-1 == pipe(pipes))

@@ -9,7 +9,7 @@
 
 #define FIFO_FILE "not_existing_file_for_fifo"
 
-int main (int argc, char* argv){
+int main (){
 	//  Creating fifo
 	int fifo = mkfifo (FIFO_FILE, 0);
 
