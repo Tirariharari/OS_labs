@@ -38,7 +38,7 @@ int main(){
 		semop(sem, &sem_lock, 1);
 		time_t tt = time(0);
 		sprintf(addr, "%s", ctime(&tt));
-		sleep(4);
+		sleep(2);
 		semop (sem, &sem_open, 1);
 	}
 
