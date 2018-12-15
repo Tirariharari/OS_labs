@@ -22,21 +22,20 @@ int main (){
 		break;
 	case 0:  //  Child
 	{
-		int len = 0;
-		time_t tim;
+		sleep (1);
+		time_t buf;
 		close (pipes[1]);
-		while ((len = read(pipes[0], &tim, sizeof (tim))) != 0)
-			write (2, &tim, len);
+		read(pipes[0], &buf, sizeof (time_t));
 		close (pipes[0]);
-		printf ("%s\n", ctime(&tim));
+		printf ("%s\n", ctime (&buf));
 		break;
 	}
 	default:
 	{
 		time_t tt = time (0);
-		close (pipes[1]);
-		write (pipes[0], (void*)tt, sizeof(tt)+1);
 		close (pipes[0]);
+		write (pipes[1], &tt, sizeof (time_t));
+		close (pipes[1]);
 		break;
 	}
 	}
