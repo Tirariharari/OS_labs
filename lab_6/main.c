@@ -34,7 +34,7 @@ void* thread_func (){
                 timer = time(0);
                 pthread_mutex_lock(&mutex);
                 sprintf(addr, "%s", ctime(&timer));
-                pthread_cond_signal (&condition);
+                pthread_cond_broadcast (&condition);
                 pthread_mutex_unlock(&mutex);
                 sleep (3);
         }
@@ -78,3 +78,4 @@ int main(){
         pthread_mutex_destroy(&mutex);
         return 0;
 }
+
