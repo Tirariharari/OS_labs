@@ -1,0 +1,1 @@
+Producer waits more sec then consumer, so consumer print the same data 3-4 times. It was done to see, if rwlock isn't working.
