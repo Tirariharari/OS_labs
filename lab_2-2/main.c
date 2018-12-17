@@ -50,7 +50,7 @@ bool copy_file (){
                 printf ("copy_file can't open file_from\n");
                 return false;
         }
-        int fd_write = open(FILE_TO, O_CREAT|O_TRUNC|O_RDWR);
+        int fd_write = open(FILE_TO, O_CREAT|O_TRUNC|O_WRONLY);
         if (fd_write < 0){
                 printf ("copy_file can't open file_to\n");
                 return false;
